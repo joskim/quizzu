@@ -26,14 +26,6 @@
             android:orientation="horizontal"
             tools:ignore="UselessParent">
 
-            <Button android:id="@+id/fullscreen_content_controls"
-                style="?metaButtonBarButtonStyle"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@string/ready"
-                android:textColor="#ffffff" />
-
         </LinearLayout>
 
         <TextView android:id="@+id/welcomeText"
@@ -69,6 +61,15 @@
             android:text="The social trivia game that makes you smarter!"
             android:layout_gravity="center|bottom"
             android:layout_marginTop="300dp" />
+
+        <Button android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/ready"
+            android:textColor="#ffffff"
+            android:layout_gravity="center_horizontal|bottom" />
 
     </FrameLayout>
 

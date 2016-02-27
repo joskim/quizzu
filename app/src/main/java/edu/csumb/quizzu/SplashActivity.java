@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Toast;
 
 import signin.SignInActivity;
 
@@ -60,7 +61,8 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         // Upon interacting with UI controls, delay any scheduled hide()
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
-        findViewById(R.id.fullscreen_content_controls).setOnTouchListener(mDelayHideTouchListener);
+        //findViewById(R.id.fullscreen_content_controls).setOnTouchListener(mDelayHideTouchListener);
+        findViewById(R.id.fullscreen_content_controls).setOnClickListener(this);
 
     }
 
@@ -68,7 +70,7 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
         if(v.getId() == R.id.fullscreen_content_controls) //take me to the app button
         {
             //Start Main Activity
-            Intent i = new Intent(this, SignInActivity.class);
+            Intent i = new Intent(this, HomeActivity.class); //TODO(all) Change this to signin activity?
             startActivity(i);
         }
 

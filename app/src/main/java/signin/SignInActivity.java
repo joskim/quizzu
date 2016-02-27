@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -19,6 +20,7 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 
+import edu.csumb.quizzu.HomeActivity;
 import edu.csumb.quizzu.R;
 
 /**
@@ -39,7 +41,7 @@ public class SignInActivity extends AppCompatActivity implements
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.signin_activity);
 
         // Views
         mStatusTextView = (TextView) findViewById(R.id.status);
@@ -127,9 +129,12 @@ public class SignInActivity extends AppCompatActivity implements
             GoogleSignInAccount acct = result.getSignInAccount();
             mStatusTextView.setText(getString(R.string.signed_in_fmt, acct.getDisplayName()));
             updateUI(true);
+            Intent i = new Intent(this, HomeActivity.class);
+            startActivity(i);
         } else {
             // Signed out, show unauthenticated UI.
             updateUI(false);
+            Toast.makeText(this, "didn't work yo", Toast.LENGTH_LONG).show();
         }
     }
     // [END handleSignInResult]

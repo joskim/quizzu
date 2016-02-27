@@ -35,7 +35,7 @@ public class IdTokenActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_signin);
+        setContentView(R.layout.signin_activity);
 
         // Views
         mIdTokenTextView = (TextView) findViewById(R.id.detail);

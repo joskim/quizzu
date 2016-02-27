@@ -38,7 +38,7 @@ public class ServerAuthCodeActivity extends AppCompatActivity implements
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_home);
 
         // Views
         mAuthCodeTextView = (TextView) findViewById(R.id.detail);
@@ -122,6 +122,9 @@ public class ServerAuthCodeActivity extends AppCompatActivity implements
                 // Show signed-in UI.
                 mAuthCodeTextView.setText(getString(R.string.auth_code_fmt, authCode));
                 updateUI(true);
+
+                // TODO(Richard): The signin activity is linked to the home page, but there is no validation (once user signs in, nothing happens)
+                //Looks like that's what is written below.
 
                 // TODO(user): send code to server and exchange for access/refresh/ID tokens.
                 // [END get_auth_code]
