@@ -1,0 +1,75 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#536dfe"
+    tools:context="edu.csumb.quizzu.SplashActivity">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:id="@+id/fullscreen_content"
+        android:layout_gravity="left|bottom">
+
+        <LinearLayout
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+            <Button android:id="@+id/fullscreen_content_controls"
+                style="?metaButtonBarButtonStyle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/ready"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <TextView android:id="@+id/welcomeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:keepScreenOn="true"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:text="@string/welcome"
+            android:layout_gravity="center_horizontal|top" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:clickable="true"
+            android:alpha=".9"
+            android:layout_gravity="center"
+            android:longClickable="true"
+            android:interpolator="@android:anim/linear_interpolator"/>
+
+        <TextView
+            android:id="@+id/appDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:textSize="@dimen/abc_text_size_headline_material"
+            android:gravity="center"
+            android:text="The social trivia game that makes you smarter!"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="300dp" />
+
+    </FrameLayout>
+
+</FrameLayout>
