@@ -1,33 +1,43 @@
-# Build configuration file for Circle CI
-# needs to be named `circle.yml` and should be in the top level dir of the repo
+#
+# Build configuration for Circle CI
+#
 
 general:
-  artifacts:
-    -/home/ubuntu/quizzu/build/outputs/reports/quizzu/connected
+    artifacts:
+        - /home/ubuntu/quizzu/app/build/outputs/apk/
 
 machine:
-  environment:
-    ANDROID_HOME: /home/ubuntu/android
-  java:
-    version: oraclejdk7
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
 
 dependencies:
-  cache_directories:
-    - ~/.android
-    - ~/android
-  override:
-    - (echo "Downloading Android SDK v19 now!")
-    - (source scripts/environmentSetup.sh && getAndroidSDK)
+    override:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-19.1.0,android-19,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
 
 test:
-  pre:
-    - $ANDROID_HOME/tools/emulator -avd testAVD -no-skin -no-audio -no-window:
-      background: true
-    - (./gradlew assembleDebug):
-      timeout: 1200
-    - (./gradlew assembleDebugTest):
-      timeout: 1200
-    - (source scripts/environmentSetup.sh && waitForAVD)
-  override:
-    - (echo "Running JUnit tests!")
-    - (./gradlew connectedAndroidTest)
+    override:
+        - (./gradlew assemble):
+            timeout: 360
+Raw  android-21-circle.yml
+#
+# Build configuration for Circle CI
+#
+
+general:
+    artifacts:
+        - /home/ubuntu/quizzu/app/build/outputs/apk/
+
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+    override:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-21.1.2,android-21,extra-google-m2repository,extra-google-google_play_services,extra-android-support
+        - ANDROID_HOME=/usr/local/android-sdk-linux ./gradlew dependencies
+
+test:
+    override:
+        - (./gradlew assemble):
+            timeout: 360
