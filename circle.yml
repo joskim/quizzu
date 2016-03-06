@@ -3,7 +3,7 @@
 
 general:
   artifacts:
-    -/home/ubuntu/quizzu/build/outputs/reports/**testFolderName**/connected
+    -/home/ubuntu/quizzu/build/outputs/reports/quizzu/connected
 
 machine:
   environment:
