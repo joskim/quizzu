@@ -20,19 +20,19 @@
         <activity
             android:name="signin.SignInActivity"
             android:label="@string/name_sign_in_activity"
-            android:theme="@style/ThemeOverlay.MyNoTitleActivity"></activity>
+            android:theme="@style/ThemeOverlay.MyNoTitleActivity" />
         <activity
             android:name="signin.SignInActivityWithDrive"
             android:label="@string/name_sign_in_activity"
-            android:theme="@style/ThemeOverlay.MyNoTitleActivity"></activity>
+            android:theme="@style/ThemeOverlay.MyNoTitleActivity" />
         <activity
             android:name="signin.IdTokenActivity"
             android:label="@string/name_id_token_activity"
-            android:theme="@style/ThemeOverlay.MyNoTitleActivity"></activity>
+            android:theme="@style/ThemeOverlay.MyNoTitleActivity" />
         <activity
             android:name="signin.ServerAuthCodeActivity"
             android:label="@string/name_auth_code_activity"
-            android:theme="@style/ThemeOverlay.MyNoTitleActivity"></activity>
+            android:theme="@style/ThemeOverlay.MyNoTitleActivity" />
         <activity
             android:name=".SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
@@ -50,7 +50,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/title_activity_settings"></activity>
+            android:label="@string/title_activity_settings" />
+        <activity android:name=".QuestionActivity"></activity>
     </application>
 
 </manifest>

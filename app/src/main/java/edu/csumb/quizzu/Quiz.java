@@ -41,9 +41,34 @@ public class Quiz {
         return quizQuestions; //Placeholder
     }
 
+    public String getQuizName() {
+        return quizName;
+    }
+
+    public void setQuizName(String quizName) {
+        this.quizName = quizName;
+    }
+
+    public ArrayList<Question> getQuizQuestions() {
+        return quizQuestions;
+    }
+
+    public void setQuizQuestions(ArrayList<Question> quizQuestions) {
+        this.quizQuestions = quizQuestions;
+    }
+
+    public Category getQuizCategory() {
+        return quizCategory;
+    }
+
+    public void setQuizCategory(Category quizCategory) {
+        this.quizCategory = quizCategory;
+    }
+
     //Return the user's score for this quiz
     public double determineScore() {
         return 999; //Placeholder
+
     }
 
 }
