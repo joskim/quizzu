@@ -53,6 +53,7 @@
             android:label="@string/title_activity_settings" />
         <activity android:name=".QuestionActivity" />
         <activity android:name=".QuizActivity"/>
+        <activity android:name=".FlipperActivity"/>
         <activity android:name=".QuizLanding">
         </activity>
     </application>

@@ -111,5 +111,6 @@
 
     <!-- Added some strings for db buttons - RI -->
     <string name="quizLanding">Quiz Landing</string>
+    <string name="viewFlipper">Flipper Page</string>
 
 </resources>

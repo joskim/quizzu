@@ -56,6 +56,10 @@ public class HomeActivity extends AppCompatActivity
         View quizLanding = (Button) findViewById(R.id.quizLanding);
         quizLanding.setOnClickListener(this);
 
+        //Button for flipper page
+        View flipperDemo = (Button) findViewById(R.id.flipperButton);
+        flipperDemo.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {
@@ -69,13 +73,19 @@ public class HomeActivity extends AppCompatActivity
         }
 
         /*
-        Added button to go to quiz landing page to test DB
+        Added button to go to quiz landing page to test DB and a flipper for taking quizes witout starting a new activity
         - RI
          */
         if(v.getId() == R.id.quizLanding)
         {
             createQuizData();
             Intent i = new Intent(this, QuizLanding.class);
+            startActivity(i);
+        }
+
+        if(v.getId() == R.id.flipperButton)
+        {
+            Intent i = new Intent(this, FlipperActivity.class);
             startActivity(i);
         }
     }
