@@ -35,3 +35,6 @@ captures/
 
 # Intellij
 *.iml
+
+#Android Studio --ANTHONY PUT THIS HERE
+.idea/workspace.xml
