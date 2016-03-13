@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuizLanding">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/questionList"
+        android:layout_above="@+id/button_showData" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show Data"
+        android:id="@+id/button_showData"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Quiz"
+        android:id="@+id/button_editData"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button_showData"
+        android:layout_toEndOf="@+id/button_showData"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp" />
+</RelativeLayout>

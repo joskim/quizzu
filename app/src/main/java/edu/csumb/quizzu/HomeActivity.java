@@ -52,6 +52,10 @@ public class HomeActivity extends AppCompatActivity
         View demoQuizButton = (Button) findViewById(R.id.demoQuizBtn);
         demoQuizButton.setOnClickListener(this);
 
+        // Button For quiz landing
+        View quizLanding = (Button) findViewById(R.id.quizLanding);
+        quizLanding.setOnClickListener(this);
+
     }
 
     public void onClick(View v) {
@@ -61,6 +65,17 @@ public class HomeActivity extends AppCompatActivity
 
             //TODO: PutExtra all the quiz info into the new activity, MUST FIRST IMPLEMENT PARCELABLE ON ALL CUSTOM CLASSES ¯\_(ツ)_/¯
             Intent i = new Intent(this, QuizActivity.class);
+            startActivity(i);
+        }
+
+        /*
+        Added button to go to quiz landing page to test DB
+        - RI
+         */
+        if(v.getId() == R.id.quizLanding)
+        {
+            createQuizData();
+            Intent i = new Intent(this, QuizLanding.class);
             startActivity(i);
         }
     }
@@ -168,6 +183,14 @@ public class HomeActivity extends AppCompatActivity
         Category test = new Category();
         test.setCategoryName("Science");
         return test;
+    }
+
+    public void createQuizData() {
+        QuizzuSQLiteHelper quizTest = new QuizzuSQLiteHelper(this);
+        for(int i = 0; i < 4; i++){
+            quizTest.insertQuiz(new Quiz("name", "author", "question", "answer", "description", "difficulty", "timeStamp"));
+        }
+
     }
 
 

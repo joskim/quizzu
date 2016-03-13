@@ -109,4 +109,7 @@
     <string name="demoQuizBtn">Demo Quiz!</string>
     <string name="joke1">Hells Yeah</string>
 
+    <!-- Added some strings for db buttons - RI -->
+    <string name="quizLanding">Quiz Landing</string>
+
 </resources>

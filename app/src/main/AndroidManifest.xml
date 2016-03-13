@@ -52,7 +52,9 @@
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".QuestionActivity" />
-        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".QuizActivity"/>
+        <activity android:name=".QuizLanding">
+        </activity>
     </application>
 
 </manifest>
