@@ -12,6 +12,13 @@
 
     <string name="action_settings">Settings</string>
 
+    <!--- Main Page Strings -->
+
+
+    <string name="welcome_to_quizu">Welcome Back!</string>
+    <string name="create_q">Create</string>
+    <string name="my_profile">My Stuff</string>
+
     <!-- Activity Names and Descriptions -->
     <string name="name_sign_in_activity">SignInActivity</string>
     <string name="desc_sign_in_activity">Signing in, signing out, and revoking access.</string>

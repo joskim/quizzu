@@ -12,4 +12,60 @@
     tools:context=".HomeActivity"
     tools:showIn="@layout/app_bar_main">
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:layout_marginBottom="11dp"
+        android:layout_above="@+id/user"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/batmanicon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Caped Crusader"
+        android:id="@+id/user"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_marginBottom="9dp"
+        android:layout_above="@+id/user_score"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="9999"
+        android:id="@+id/user_score"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/create_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/create_q"
+        android:layout_below="@+id/user_score"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="52dp" />
+
+    <Button
+        android:id="@+id/profile_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/my_profile"
+        android:layout_below="@+id/create_button"
+        android:layout_alignLeft="@+id/create_button"
+        android:layout_alignStart="@+id/create_button" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play"
+        android:id="@+id/play_button"
+        android:layout_below="@+id/user_score"
+        android:layout_centerHorizontal="true" />
+
+
 </RelativeLayout>

@@ -45,6 +45,20 @@ public class HomeActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
     }
 
+
+    public void onClick(View v) {
+        if(v.getId() == R.id.fullscreen_content_controls) //take me to the app button
+        {
+            //Start Main Activity
+            Intent i = new Intent(this, HomeActivity.class); //TODO(all) Change this to signin activity?
+            startActivity(i);}
+
+    }
+
+
+
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
