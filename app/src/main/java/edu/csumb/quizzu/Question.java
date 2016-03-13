@@ -1,5 +1,7 @@
 package edu.csumb.quizzu;
 
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
 /**
@@ -9,6 +11,7 @@ public class Question {
     Quiz ownedByQuiz; //Keep track of where this question belongs
     String question; //The actual question, like, What is the square root of a cat?
     ArrayList<Answer> answerChoices; //List of the possible answers for this quiz
+    Answer correctAnswer;
     Difficulty difficultyLevel; //Organize questions into difficulty levels
     int scoreValue; //How many points this question is worth
 
@@ -57,8 +60,11 @@ public class Question {
         this.scoreValue = scoreValue;
     }
 
-    //Check if the user's response is correct
-    public boolean checkAnswer() {
-        return true; //Placeholder
+    public void setCorrectAnswer(Answer a) {
+        this.correctAnswer = a;
+    }
+
+    public Answer getCorrectAnswer() {
+        return this.correctAnswer;
     }
 }

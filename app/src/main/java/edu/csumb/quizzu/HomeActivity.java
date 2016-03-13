@@ -13,11 +13,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import com.google.android.gms.games.quest.QuestEntity;
+
+import java.util.ArrayList;
 
 import signin.SignInActivity;
 
 public class HomeActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +48,21 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        View demoQuizButton = (Button) findViewById(R.id.demoQuizBtn);
+        demoQuizButton.setOnClickListener(this);
+
+    }
+
+    public void onClick(View v) {
+        if(v.getId() == R.id.demoQuizBtn)
+        {
+            generateDemoQuiz(); //Create a demo quiz for Milestone 1
+
+            //TODO: PutExtra all the quiz info into the new activity, MUST FIRST IMPLEMENT PARCELABLE ON ALL CUSTOM CLASSES ¯\_(ツ)_/¯
+            Intent i = new Intent(this, QuizActivity.class);
+            startActivity(i);
+        }
     }
 
     @Override
@@ -99,8 +119,56 @@ public class HomeActivity extends AppCompatActivity
 
         }
 
+
+
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+
+    public void generateDemoQuiz() {
+        //YO, check it out guys. I wrote out a demo of how to create a quiz and tried to show most of the methods we are gonna need
+        Quiz demoQuiz = new Quiz(); //Instantiate a Quiz
+        Category testCategory = makeCategory(); //Make some bs categories to attach the quiz
+        Question question1 = new Question(); //Make some bs questions (just one for now)
+        question1.setQuestion("Which of the following famous scientist cured Cat Cancer?"); //Set the question ... of the question? IDK how to word this better
+
+        //Make some funny cat names
+        Answer a1 = new Answer("H. John Whiskers");
+        Answer a2 = new Answer("Bartolemeu Meowser");
+        Answer a3 = new Answer("Catalie Portman");
+        Answer a4 = new Answer("Anderson Pooper");
+
+        //Build an arraylist full of said cat names
+        ArrayList<Answer> answerList = new ArrayList<Answer>();
+        answerList.add(a1);
+        answerList.add(a2);
+        answerList.add(a3);
+        answerList.add(a4);
+
+        //Put those answers inside that question!
+        question1.setAnswerChoices(answerList);
+        question1.setCorrectAnswer(a1); //Everybody knows H John Whiskers cured kitty cancer
+
+        //Build an arraylist full of the question(s) you just made, in our demo case there is only one question
+        ArrayList<Question> questionList = new ArrayList<Question>();
+        questionList.add(question1); //Put the questions inside your list
+
+
+        //Put all the data you just made into a Quiz
+        demoQuiz.setQuizName("Famous Cat Scientists");
+        demoQuiz.setQuizCategory(testCategory);
+        demoQuiz.setQuizQuestions(questionList);
+
+    }
+
+    public Category makeCategory() {
+        Category test = new Category();
+        test.setCategoryName("Science");
+        return test;
+    }
+
+
 }
